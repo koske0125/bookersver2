@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'homes#home'
   get '/home/about' => 'homes#about'
-  resource :users, only: [:show, :edit, :update]
+  resource :users, only: [:show, :edit, :update, :index]
   resource :books, only: [:create, :index, :show, :destroy, :edit]
 end
