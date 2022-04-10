@@ -7,8 +7,10 @@ class BooksController < ApplicationController
   end
 
   def create
+    @user = User.find(current_user.id)
     @book = Book.new(book_params)
     @book.user_id = current_user.id
+    @books = Book.all
 
     if @book.save
       redirect_to book_path(@book), notice: "You have created book successfully."
